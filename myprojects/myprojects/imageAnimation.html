@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vertical Text and Image Animation</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+
+    .vertical-text {
+        writing-mode: vertical-rl;
+        text-align: center;
+        font-size: 24px;
+        padding: 20px;
+        background-color: #333;
+        color: #fff;
+        animation: moveText 5s infinite alternate;
+    }
+
+    @keyframes moveText {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-100%);
+        }
+    }
+
+    .moving-image {
+        position: absolute;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: moveImage 5s infinite alternate;
+    }
+
+    @keyframes moveImage {
+        0% {
+            top: -100px;
+        }
+        100% {
+            top: 100vh;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="vertical-text">This text moves from bottom to top</div>
+    <img class="moving-image" src="https://via.placeholder.com/150" alt="Moving Image">
+</body>
+</html>
